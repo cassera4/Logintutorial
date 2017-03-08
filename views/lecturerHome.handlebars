@@ -1,0 +1,33 @@
+<body>
+  <script>
+    function generateCode(){
+      window.location.href='/users/generateCode'
+    };
+
+    function home(){
+      window.location.href='users/postlogin'
+    };
+  </script>
+    <p>
+        <div align = center>
+          <input type="image" src="redbutton.png" alt="Red Button" style="width:104px;height:58px;" onclick = "lectureHome()" >
+
+      <div align = centre>
+      <body onload="getUser()">
+    <p>Hello <span class="username"></span>! </p>
+
+    </div>
+
+
+      <br>
+
+      <button Class = "button2" onclick="generateCode()"> Generate access code </button>
+
+      <br>
+
+      <button Class = "button" onclick="home()"> Home </button>
+      <button Class = "button" onclick="indexPage()"> Logout </button>
+
+    </div>
+    </p>
+  </body>

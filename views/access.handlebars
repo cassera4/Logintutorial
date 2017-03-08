@@ -1,0 +1,24 @@
+<body>
+  <script>
+    function buzz(){
+      window.location.href='/users/buzz'
+    };
+
+    function print() {
+      document.getElementById('codeGenerated').innerHTML = 'The code is';
+    };
+  </script>
+  <div align = center>
+      <img src="redbutton.png" alt="Red Button" style="width:104px;height:58px;" onclick = "home()" >
+      <h1 align = "center"> Join a session</h1>
+      <p> Enter code to access lecture information</p>
+      //COMPARE WITH LECTURERS CODE 
+      <form action >
+
+      <textarea id = "code" placeholder="Enter code here" required></textarea>
+      <br>
+      <br>
+      <input type="submit" value="Enter Code" onclick="buzz()">
+    </form>
+    </div>
+</body>

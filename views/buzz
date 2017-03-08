@@ -1,0 +1,18 @@
+<body>
+      <div align = center>
+      <img src="redbutton.png" alt="Red Button" style="width:104px;height:58px;" onclick = "home()" >
+        <p> Attach a message <br>
+          <form align = "center">
+            <select id="Messages" onchange = "myFunction()">
+              <option>Choose default message</option>
+              <option>I don't understand</option>
+              <option>Can you please repeat</option>
+            </select>
+          </form>
+          <p id="demo"></p>
+          <button type = "button" name= "button" onclick="notifyMe(myFunction())"> BUZZ </button>
+
+
+        </p>
+
+  </body>

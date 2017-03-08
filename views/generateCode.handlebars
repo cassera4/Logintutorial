@@ -1,0 +1,54 @@
+<body>
+  <div align = center>
+    <h2> Generate Access Code </h2>
+    <script>
+    function makeid()
+    {
+      var text = "";
+      var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+      for( var i=0; i < 10; i++ )
+          text += possible.charAt(Math.floor(Math.random() * possible.length));
+          console.log(text);
+      return text;
+    }
+  </script>
+  <body>
+    <div  align = "center">
+    <p> The code is </p>
+    <script algin = center>
+    function generateCode(){
+      var code = document.getElementById('code').value;
+      //document.write(code);
+      console.log(code);
+      var d = new Date();
+      var m = d.getMinutes();
+      if(m < 10) {
+        m = '0' + m;
+      }
+
+        var gencode = code + d.getDate() + (d.getMonth()+1)+ (d.getYear()-100)+ d.getHours()+ m;
+        //console.log(code);
+        //document.write(gencode);
+        return gencode;
+    }
+    function code() {
+
+        document.getElementById('codeGenerated').innerHTML = 'The code is: ' + generateCode();
+      }
+
+
+    </script>
+    <textarea id = "code" placeholder="Enter module code"></textarea>
+    <br>
+
+    <button type = 'submit' onclick = "code()"> generate code </button>
+
+    <!--<h2> The code is: </h2> -->
+    <output id = "codeGenerated"></output>
+    <script> code() </script>
+
+  </div>
+  </body
+
+</body>

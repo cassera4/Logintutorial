@@ -1,0 +1,64 @@
+<script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script type = "text/javascript">
+  //var io = require('socket.io');
+  var socket = io.connect();
+  console.log('A user connected');
+</script>
+          <script type="text/javascript" charset="utf-8">
+
+             //Takes default message from drop down menu
+             function myFunction(){
+               var x = document.getElementById("Messages");
+               var i = x.selectedIndex;
+               var result = x.options[i].text;
+               return result;
+             }
+             //https://developer.mozilla.org/en/docs/Web/API/notification
+             function notifyMe(hello) {
+                // Let's check if the browser supports notifications
+                if (!("Notification" in window)) {
+                  alert("This browser does not support desktop notification");
+                }
+
+                // Let's check whether notification permissions have already been granted
+                else if (Notification.permission === "granted") {
+                  // If it's okay let's create a notification
+                  var notification = new Notification(hello);
+                }
+
+                // Otherwise, we need to ask the user for permission
+                else if (Notification.permission !== "denied") {
+                  Notification.requestPermission(function (permission) {
+                    // If the user accepts, let's create a notification
+                    if (permission === "granted") {
+                      var notification = new Notification(hello);
+                    }
+                  });
+                }
+
+                // At last, if the user has denied notifications, and you
+                // want to be respectful there is no need to bother them any more.
+              }
+          </script>
+
+  </head>
+
+  <body>
+      <div align = center>
+      <img src="redbutton.png" alt="Red Button" style="width:104px;height:58px;" onclick = "home()" >
+        <p> Attach a message <br>
+          <form align = "center">
+            <select id="Messages" onchange = "myFunction()">
+              <option>Choose default message</option>
+              <option>I don't understand</option>
+              <option>Can you please repeat</option>
+            </select>
+          </form>
+          <p id="demo"></p>
+          <button type = "button" name= "button" onclick="notifyMe(myFunction())"> BUZZ </button>
+
+
+        </p>
+
+  </body>
